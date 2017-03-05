@@ -7,6 +7,9 @@
 ;; Enable line numbers
 (global-linum-mode t)
 
+;; Enable column numbers in mode line
+(setq column-number-mode t)
+
 ;; Set the default theme
 (load-theme 'tango-dark)
 
