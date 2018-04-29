@@ -30,6 +30,13 @@
     (setq-default indent-tabs-mode nil)
     (setq-default tab-width 4)))
 
+;; JavaScript specific
+;; -------------------
+(add-hook 'js-mode-hook
+  (lambda ()
+    (setq-default indent-tabs-mode nil)
+    (setq-default tab-width 2)))
+
 ;; HTML specific
 ;; -------------
 
@@ -37,6 +44,16 @@
           (lambda()
             (setq-default indent-tabs-mode nil)
             (set (make-local-variable 'sgml-basic-offset) 2)))
+
+;; Octave specific
+;; ---------------
+(setq auto-mode-alist
+      (cons '("\\.m$" . octave-mode) auto-mode-alist))
+
+(add-hook 'octave-mode-hook
+	  (lambda ()
+	    (setq-default indent-tabs-mode nil)
+	    (setq-default tab-width 2)))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
