@@ -57,3 +57,13 @@
 	  (lambda ()
 	    (setq-default indent-tabs-mode nil)
 	    (setq-default tab-width 2)))
+
+;; Markdown specific
+;; -----------------
+(add-hook 'markdown-mode-hook
+	  (lambda()
+	    ;; Set Markdown command to pandoc (since I usually don't install Markdown)
+	    (setq markdown-command "pandoc --from markdown --to html5 --mathjax --highlight-style pygments --standalone")
+	    ;; Set fill-column to lower value when the window is small
+	    ;; to accommodate running in Termux
+	    (if (< (max (window-total-height) (window-total-width)) 72) (setq-default fill-column 50))))
