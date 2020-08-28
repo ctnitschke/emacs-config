@@ -37,3 +37,4 @@ Do some special configurations for Emacs. Changes to the standard config:
 - Set fill-column as a function of display width
   to accomodate working on small displays
   (i.e. Termux on a Smartphone)
+- Fold headlines below top-level

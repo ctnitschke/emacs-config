@@ -64,6 +64,9 @@
 	  (lambda()
 	    ;; Set Markdown command to pandoc (since I usually don't install Markdown)
 	    (setq markdown-command "pandoc --from markdown --to html5 --mathjax --highlight-style pygments --standalone")
+	    ;; Fold headlines
+	    (outline-hide-sublevels 1)
 	    ;; Set fill-column to lower value when the window is small
 	    ;; to accommodate running in Termux
-	    (if (< (max (window-total-height) (window-total-width)) 72) (setq-default fill-column 50))))
+	    (if (< (max (window-total-height) (window-total-width)) 72) (setq-default fill-column 50))
+	    ))
